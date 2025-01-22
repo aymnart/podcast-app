@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Cairo } from "next/font/google";
 import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
 const cairo = Cairo({
   subsets: ["arabic"],
@@ -21,9 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
-      <body className={`${cairo.className} antialiased`}>
+      <body className={`${cairo.className} min-h-screen antialiased`}>
         <Navbar />
         <main className="container mx-auto mt-4 px-4">{children}</main>
+        <Footer />
       </body>
     </html>
   );

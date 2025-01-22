@@ -1,6 +1,5 @@
 "use client";
 
-<<<<<<< HEAD
 import { useState, useCallback, FC } from "react";
 import Link from "next/link";
 import { List, X, MagnifyingGlass } from "@phosphor-icons/react";
@@ -12,14 +11,6 @@ interface NavItem {
 }
 
 const NavItems: NavItem[] = [
-=======
-import { useState, useCallback } from "react";
-import Link from "next/link";
-import { List, X } from "@phosphor-icons/react";
-import { cn } from "@/lib/utils";
-
-const NavItems = [
->>>>>>> 25b4192b3dbfbfb91bc141011227231220b60114
   {
     name: "الرئيسية",
     href: "#",
@@ -42,7 +33,6 @@ const NavItems = [
   },
 ];
 
-<<<<<<< HEAD
 const Search: FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const toggleSearch = useCallback(() => {
@@ -50,7 +40,7 @@ const Search: FC = () => {
   }, []);
 
   return (
-    <div className="flex items-center space-x-1 space-x-reverse">
+    <div className="flex items-center space-x-2 space-x-reverse">
       <button onClick={toggleSearch} aria-label="Toggle search">
         <MagnifyingGlass className="h-6 w-6" />
       </button>
@@ -75,20 +65,13 @@ const Search: FC = () => {
 };
 
 const Navlinks: FC = () => {
-=======
-const Navlinks = () => {
->>>>>>> 25b4192b3dbfbfb91bc141011227231220b60114
   return (
     <>
       {NavItems.map((item, i) => (
         <Link
           key={i}
           href={item.href}
-<<<<<<< HEAD
-          className="py-5 hover:text-foreground/80"
-=======
-          className="py-5 px-3 hover:text-foreground/80"
->>>>>>> 25b4192b3dbfbfb91bc141011227231220b60114
+          className="py-5 px-6 hover:text-foreground/80"
         >
           {item.name}
         </Link>
@@ -97,11 +80,7 @@ const Navlinks = () => {
   );
 };
 
-<<<<<<< HEAD
 const Navbar: FC = () => {
-=======
-const Navbar = () => {
->>>>>>> 25b4192b3dbfbfb91bc141011227231220b60114
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = useCallback(() => {
@@ -109,10 +88,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-background text-foreground" dir="rtl">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between">
-          <div className="flex space-x-4 space-x-reverse">
+    <nav className="bg-background fixed text-foreground">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="flex w-full justify-between">
+          <div className="flex space-x-20 justify-between space-x-reverse">
             {/* Logo */}
             <div>
               <Link
@@ -122,19 +101,13 @@ const Navbar = () => {
                 <span className="font-bold text-xl">بودكاست</span>
               </Link>
             </div>
-            {/* Primary Nav */}
+            {/*  nav links */}
             <div className="hidden md:flex items-center space-x-1 space-x-reverse">
               <Navlinks />
-<<<<<<< HEAD
               <Search />
             </div>
           </div>
           {/* Search and Mobile menu button */}
-=======
-            </div>
-          </div>
-          {/* Mobile menu button */}
->>>>>>> 25b4192b3dbfbfb91bc141011227231220b60114
           <div className="md:hidden flex items-center">
             <button onClick={toggleMenu} aria-label="Toggle menu">
               {isOpen ? (
@@ -156,12 +129,8 @@ const Navbar = () => {
           }
         )}
       >
-<<<<<<< HEAD
         <div className="px-7 flex flex-col">
           <Search />
-=======
-        <div className="flex flex-col">
->>>>>>> 25b4192b3dbfbfb91bc141011227231220b60114
           <Navlinks />
         </div>
       </div>
