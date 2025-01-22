@@ -9,6 +9,21 @@ export default {
   ],
   theme: {
     extend: {
+      fontSize: {
+        // Responsive font sizes using clamp()
+        xs: "clamp(0.75rem, calc(var(--base-size, 1rem) / var(--scale, 1.25) / var(--scale, 1.25)), 0.875rem)", // Min: 12px, Pref: dynamic, Max: 14px
+        sm: "clamp(0.875rem, calc(var(--base-size, 1rem) / var(--scale, 1.25)), 1rem)", // Min: 14px, Pref: dynamic, Max: 16px
+        base: "clamp(1rem, var(--base-size, 1rem), 1.125rem)", // Min: 16px, Pref: dynamic, Max: 18px
+        lg: "clamp(1.125rem, calc(var(--base-size, 1rem) * var(--scale, 1.25)), 1.25rem)", // Min: 18px, Pref: dynamic, Max: 20px
+        xl: "clamp(1.25rem, calc(var(--base-size, 1rem) * var(--scale, 1.25) * var(--scale, 1.25)), 1.5rem)", // Min: 20px, Pref: dynamic, Max: 24px
+        "2xl":
+          "clamp(1.5rem, calc(var(--base-size, 1rem) * var(--scale, 1.25) ** 3), 2rem)", // Min: 24px, Pref: dynamic, Max: 32px
+        "3xl":
+          "clamp(2rem, calc(var(--base-size, 1rem) * var(--scale, 1.25) ** 4), 2.5rem)", // Min: 32px, Pref: dynamic, Max: 40px
+        "4xl":
+          "clamp(2.5rem, calc(var(--base-size, 1rem) * var(--scale, 1.25) ** 5), 3rem)", // Min: 40px, Pref: dynamic, Max: 48px
+      },
+
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
