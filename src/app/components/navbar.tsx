@@ -1,5 +1,6 @@
 "use client";
 
+<<<<<<< HEAD
 import { useState, useCallback, FC } from "react";
 import Link from "next/link";
 import { List, X, MagnifyingGlass } from "@phosphor-icons/react";
@@ -11,6 +12,14 @@ interface NavItem {
 }
 
 const NavItems: NavItem[] = [
+=======
+import { useState, useCallback } from "react";
+import Link from "next/link";
+import { List, X } from "@phosphor-icons/react";
+import { cn } from "@/lib/utils";
+
+const NavItems = [
+>>>>>>> 25b4192b3dbfbfb91bc141011227231220b60114
   {
     name: "الرئيسية",
     href: "#",
@@ -33,6 +42,7 @@ const NavItems: NavItem[] = [
   },
 ];
 
+<<<<<<< HEAD
 const Search: FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const toggleSearch = useCallback(() => {
@@ -65,13 +75,20 @@ const Search: FC = () => {
 };
 
 const Navlinks: FC = () => {
+=======
+const Navlinks = () => {
+>>>>>>> 25b4192b3dbfbfb91bc141011227231220b60114
   return (
     <>
       {NavItems.map((item, i) => (
         <Link
           key={i}
           href={item.href}
+<<<<<<< HEAD
           className="py-5 hover:text-foreground/80"
+=======
+          className="py-5 px-3 hover:text-foreground/80"
+>>>>>>> 25b4192b3dbfbfb91bc141011227231220b60114
         >
           {item.name}
         </Link>
@@ -80,7 +97,11 @@ const Navlinks: FC = () => {
   );
 };
 
+<<<<<<< HEAD
 const Navbar: FC = () => {
+=======
+const Navbar = () => {
+>>>>>>> 25b4192b3dbfbfb91bc141011227231220b60114
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = useCallback(() => {
@@ -104,10 +125,16 @@ const Navbar: FC = () => {
             {/* Primary Nav */}
             <div className="hidden md:flex items-center space-x-1 space-x-reverse">
               <Navlinks />
+<<<<<<< HEAD
               <Search />
             </div>
           </div>
           {/* Search and Mobile menu button */}
+=======
+            </div>
+          </div>
+          {/* Mobile menu button */}
+>>>>>>> 25b4192b3dbfbfb91bc141011227231220b60114
           <div className="md:hidden flex items-center">
             <button onClick={toggleMenu} aria-label="Toggle menu">
               {isOpen ? (
@@ -129,8 +156,12 @@ const Navbar: FC = () => {
           }
         )}
       >
+<<<<<<< HEAD
         <div className="px-7 flex flex-col">
           <Search />
+=======
+        <div className="flex flex-col">
+>>>>>>> 25b4192b3dbfbfb91bc141011227231220b60114
           <Navlinks />
         </div>
       </div>
