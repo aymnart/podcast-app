@@ -71,7 +71,7 @@ const Navlinks: FC = () => {
         <Link
           key={i}
           href={item.href}
-          className="py-5 px-6 hover:text-foreground/80"
+          className="py-5 md:px-6 hover:text-foreground/80"
         >
           {item.name}
         </Link>
@@ -87,11 +87,15 @@ const Navbar: FC = () => {
     setIsOpen((prev) => !prev);
   }, []);
 
+  const closeMenu = useCallback(() => {
+    setIsOpen(false);
+  }, []);
+
   return (
-    <nav className="bg-background fixed text-foreground">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex w-full justify-between">
-          <div className="flex space-x-20 justify-between space-x-reverse">
+    <nav className="bg-background z-10 w-full fixed top-0 text-foreground">
+      <div className="max-w-6xl  bg-background mx-auto px-4">
+        <div className="flex justify-between">
+          <div className="flex space-x-4 space-x-reverse">
             {/* Logo */}
             <div>
               <Link
@@ -122,7 +126,7 @@ const Navbar: FC = () => {
       {/* Mobile menu */}
       <div
         className={cn(
-          "md:hidden transition-max-height duration-500 ease-in-out overflow-hidden",
+          "bg-background md:hidden transition-max-height duration-500 ease-in-out overflow-hidden rounded-b-lg",
           {
             "max-h-screen": isOpen,
             "max-h-0": !isOpen,
@@ -134,6 +138,13 @@ const Navbar: FC = () => {
           <Navlinks />
         </div>
       </div>
+      {/* Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 -z-10"
+          onClick={closeMenu}
+        />
+      )}
     </nav>
   );
 };

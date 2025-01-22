@@ -50,7 +50,7 @@ const footerData: FooterSection[] = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-background">
+    <footer className="bg-background max-w-screen-lg mx-auto pb-2">
       <Hr className="mb-12" />
       <div className="mx-auto w-full">
         <div className="grid mx-auto w-full text-center grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
