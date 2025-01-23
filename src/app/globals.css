@@ -45,11 +45,6 @@ body {
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
     --ring: 144 45% 40%; /* Matches primary */
-    --chart-1: 144 50% 40%; /* Green for data visualization */
-    --chart-2: 220 60% 50%; /* Blue for contrast */
-    --chart-3: 30 80% 60%; /* Warm orange */
-    --chart-4: 60 70% 50%; /* Yellow-green */
-    --chart-5: 0 75% 60%; /* Vibrant red */
     --radius: 0.5rem;
   }
 
@@ -73,11 +68,6 @@ body {
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 144 45% 55%;
-    --chart-1: 144 50% 55%;
-    --chart-2: 220 60% 50%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 60 70% 60%;
-    --chart-5: 0 75% 50%;
   }
 }
 

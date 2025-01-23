@@ -7,16 +7,6 @@ interface HrProps {
   style?: string;
 }
 
-/**
- * Hr component renders a horizontal rule with different styles and types.
- *
- * @param {HrProps} props - The properties for the Hr component.
- * @param {string} props.className - Additional class names for styling.
- * @param {string} props.type - The type of the horizontal rule, can be "pill" or "quotes".
- * @param {string} [props.style="default"] - The style of the horizontal rule, can be "default" or "gradient".
- *
- * @returns {JSX.Element} The rendered Hr component.
- */
 const Hr: FC<HrProps> = ({ className, children, style = "default" }) => {
   return (
     <div
