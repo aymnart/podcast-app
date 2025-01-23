@@ -51,7 +51,9 @@ const footerData: FooterSection[] = [
 const Footer: React.FC = () => {
   return (
     <footer className="bg-background max-w-screen-lg mx-auto pb-2">
-      <Hr className="mb-12" />
+      <Hr style="gradient" className="mb-12">
+        <div className="absolute left-1/2 transform -translate-x-1/2 w-[calc(2.6rem+0.6vw)] h-7 bg-foreground border-[10px] border-background rounded-full" />
+      </Hr>
       <div className="mx-auto w-full">
         <div className="grid mx-auto w-full text-center grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
           {footerData.map((item) => (
