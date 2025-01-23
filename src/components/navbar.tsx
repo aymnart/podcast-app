@@ -92,7 +92,7 @@ const Navbar: FC = () => {
   }, []);
 
   return (
-    <nav className="bg-background z-10 w-full fixed top-0 text-foreground">
+    <nav className="bg-background z-10 w-full sticky top-0 text-foreground">
       <div className="max-w-6xl  bg-background mx-auto px-4">
         <div className="flex justify-between">
           <div className="flex space-x-4 space-x-reverse">

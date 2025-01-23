@@ -1,4 +1,11 @@
 "use client";
+
+import Hero from "../components/hero-section";
+
 export default function Home() {
-  return <div className="min-h-dvh"></div>;
+  return (
+    <div className="min-h-dvh">
+      <Hero />
+    </div>
+  );
 }
