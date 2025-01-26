@@ -4,6 +4,7 @@ import { Cairo } from "next/font/google";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Breadcrumb from "../components/breadcrumb";
+import { KBar } from "@/components/kbar";
 
 const cairo = Cairo({
   subsets: ["arabic"],
@@ -26,7 +27,9 @@ export default function RootLayout({
       <body
         className={`${cairo.className} min-h-screen w-[90%] mx-auto antialiased`}
       >
+        <KBar />
         <Navbar />
+        {/* <KBarTrigger /> */}
         <Breadcrumb />
         <main className="container mx-auto mt-4 px-4">{children}</main>
         <Footer />
