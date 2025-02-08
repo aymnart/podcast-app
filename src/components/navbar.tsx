@@ -7,6 +7,7 @@ import ModeSwitcher from './ui/ModeSwitcher';
 import appLogo from '../assets/images/kalimah-logo.png';
 import appLogoDark from '../assets/images/kalimah-logo-dark.png';
 import Image from 'next/image';
+import { Button } from './ui/button';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -51,9 +52,12 @@ export default function Navbar() {
             <path className='duration-0' d="M16.3778 27.7083C22.8212 27.7083 28.0445 22.485 28.0445 16.0417C28.0445 9.59834 22.8212 4.375 16.3778 4.375C9.93453 4.375 4.71118 9.59834 4.71118 16.0417C4.71118 22.485 9.93453 27.7083 16.3778 27.7083Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             <path className='duration-0' d="M30.9613 30.625L24.6904 24.3542" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <button className='hidden md:flex items-center justify-center px-6 py-2 border border-primary text-white dark:border-gray-50/60 rounded-full text-md font-normal dark:text-white/90 bg-primary dark:bg-transparent dark:hover:bg-primary dark:hover:border-primary transition-all'>
+          {/* <button className='hidden md:flex items-center justify-center px-6 py-2 border border-primary text-white dark:border-gray-50/60 rounded-full text-md font-normal dark:text-white/90 bg-primary dark:bg-transparent dark:hover:bg-primary dark:hover:border-primary transition-all'>
             تحميل التطبيـق
-          </button>
+          </button> */}
+          <Button size="lg" className="hidden md:flex rounded-full text-white dark:bg-transparent border border-primary dark:border-gray-50/60">
+            ابدأ الاستماع
+          </Button>
           <div className={`hamburger md:hidden ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)} >
             <div></div>
           </div>

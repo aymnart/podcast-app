@@ -31,14 +31,14 @@ export default function RootLayout({
         className={`${cairo.className} min-h-screen  antialiased relative `}
       >
         <ThemeProviderWrapper>
-          <div className="absolute w-[70vw] h-[800px] bg-[#6CBC74]  rounded-full blur-[100px] -top-[40%] left-1/2 -translate-x-1/2 opacity-0 dark:opacity-25 transition-all"></div>
+          <div className="absolute w-[70vw] -z-10 h-[800px] bg-[#6CBC74]  rounded-full blur-[100px] -top-[40%] left-1/2 -translate-x-1/2 opacity-0 dark:opacity-25 transition-all"></div>
 
           {/* <KBar />
         <Navbar /> */}
           {/* <KBarTrigger /> */}
           {/* <Breadcrumb /> */}
           <Navbar />
-          <main className="container mt-4">{children}</main>
+          <main>{children}</main>
           <Footer />
         </ThemeProviderWrapper>
       </body>
