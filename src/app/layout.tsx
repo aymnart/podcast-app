@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "./app.scss";
 import { Cairo } from "next/font/google";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 import Breadcrumb from "../components/breadcrumb";
 import { KBar } from "@/components/kbar";
+import ThemeProviderWrapper from "@/components/ThemeProviderWrapper";
 
 const cairo = Cairo({
   subsets: ["arabic"],
   weight: ["300", "400", "600", "700"],
   display: "swap",
 });
+
 
 export const metadata: Metadata = {
   title: "Kalimah - كلمة",
@@ -22,17 +24,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="ar" dir="rtl">
       <body
-        className={`${cairo.className} min-h-screen w-[90%] mx-auto antialiased`}
+        className={`${cairo.className} min-h-screen  antialiased relative `}
       >
-        <KBar />
-        <Navbar />
-        {/* <KBarTrigger /> */}
-        <Breadcrumb />
-        <main className="container mx-auto mt-4 px-4">{children}</main>
-        <Footer />
+        <ThemeProviderWrapper>
+          <div className="absolute w-[70vw] h-[800px] bg-[#6CBC74]  rounded-full blur-[100px] -top-[40%] left-1/2 -translate-x-1/2 opacity-0 dark:opacity-25 transition-all"></div>
+
+          {/* <KBar />
+        <Navbar /> */}
+          {/* <KBarTrigger /> */}
+          {/* <Breadcrumb /> */}
+          <Navbar />
+          <main className="container mt-4">{children}</main>
+          <Footer />
+        </ThemeProviderWrapper>
       </body>
     </html>
   );

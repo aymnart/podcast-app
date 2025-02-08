@@ -1,152 +1,89 @@
-"use client";
+'use client';
 
-import { useState, useCallback, FC } from "react";
-import Link from "next/link";
-import { List, X, MagnifyingGlass } from "@phosphor-icons/react";
-import { cn } from "@/lib/utils";
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { useTheme } from 'next-themes';
+import ModeSwitcher from './ui/ModeSwitcher';
+import appLogo from '../assets/images/kalimah-logo.png';
+import appLogoDark from '../assets/images/kalimah-logo-dark.png';
+import Image from 'next/image';
 
-interface NavItem {
-  name: string;
-  href: string;
-}
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-const NavItems: NavItem[] = [
-  {
-    name: "الرئيسية",
-    href: "#",
-  },
-  {
-    name: "الحلقات",
-    href: "#",
-  },
-  {
-    name: "التصنيفات",
-    href: "#",
-  },
-  {
-    name: "عن البودكاست",
-    href: "#",
-  },
-  {
-    name: "اتصل بنا",
-    href: "#",
-  },
-];
-
-const Search: FC = () => {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const toggleSearch = useCallback(() => {
-    setIsSearchOpen((prev) => !prev);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 60);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <div className="flex items-center space-x-2 space-x-reverse">
-      <button onClick={toggleSearch} aria-label="Toggle search">
-        <MagnifyingGlass className="h-6 w-6" />
-      </button>
-
-      <div
-        className={cn(
-          "transition-all duration-300 ease-in-out overflow-hidden",
-          {
-            "max-w-xs opacity-100": isSearchOpen,
-            "max-w-0 opacity-0": !isSearchOpen,
-          }
-        )}
-      >
-        <input
-          type="text"
-          className="py-2 rounded-full px-4 border"
-          placeholder="ابحث..."
-        />
-      </div>
-    </div>
-  );
-};
-
-const Navlinks: FC = () => {
-  return (
-    <>
-      {NavItems.map((item, i) => (
-        <Link
-          key={i}
-          href={item.href}
-          className="py-5 md:px-6 hover:text-foreground/80"
-        >
-          {item.name}
+    <nav
+      className={`sticky w-full top-0 z-50 transition-all duration-300 rtl bg-transparent ${scrolled || menuOpen ? 'bg-white dark:bg-background/95 dark:backdrop-blur-sm' : ''} ${scrolled && !menuOpen ? 'border-b border-gray-200/50 dark:border-gray-400/20' : ''}`}
+    >
+      <div className="container mx-auto px-4 md:px-8 lg:px-16 flex justify-between items-center h-16">
+        {/* Logo */}
+        <Link href="/">
+          <Image src={appLogo} alt="Logo" className='h-8 w-auto dark:hidden' />
+          <Image src={appLogoDark} alt="Logo" className='h-8 w-auto hidden dark:flex' />
         </Link>
-      ))}
-    </>
-  );
-};
 
-const Navbar: FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = useCallback(() => {
-    setIsOpen((prev) => !prev);
-  }, []);
-
-  const closeMenu = useCallback(() => {
-    setIsOpen(false);
-  }, []);
-
-  return (
-    <nav className="bg-background z-10 w-full sticky top-0 text-foreground">
-      <div className="max-w-6xl  bg-background mx-auto px-4">
-        <div className="flex justify-between">
-          <div className="flex space-x-4 space-x-reverse">
-            {/* Logo */}
-            <div>
-              <Link
-                href="/"
-                className="flex items-center py-5 px-2 text-foreground"
-              >
-                <span className="font-bold text-xl">بودكاست</span>
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex space-x-8 rtl:space-x-reverse">
+          {['الرئيسية', 'الحلقات', 'المدونة', 'اتصل بنا'].map((item, index) => (
+            <li key={index}>
+              <Link href="/">
+                <span className="hover:opacity-80 transition-all duration-75 cursor-pointer text-md">
+                  {item}
+                </span>
               </Link>
-            </div>
-            {/*  nav links */}
-            <div className="hidden md:flex items-center space-x-1 space-x-reverse">
-              <Navlinks />
-              <Search />
-            </div>
-          </div>
-          {/* Search and Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button onClick={toggleMenu} aria-label="Toggle menu">
-              {isOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <List className="h-6 w-6" />
-              )}
-            </button>
+            </li>
+          ))}
+        </ul>
+
+        {/* Mobile Menu Toggle */}
+        <div className="flex items-center gap-4 rtl:space-x-reverse">
+          <ModeSwitcher />
+          <svg xmlns="http://www.w3.org/2000/svg" className='duration-150 text-gray-600 dark:text-gray-100' width="26" height="26" viewBox="0 0 36 35" fill="none">
+            <path className='duration-0' d="M16.3778 27.7083C22.8212 27.7083 28.0445 22.485 28.0445 16.0417C28.0445 9.59834 22.8212 4.375 16.3778 4.375C9.93453 4.375 4.71118 9.59834 4.71118 16.0417C4.71118 22.485 9.93453 27.7083 16.3778 27.7083Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path className='duration-0' d="M30.9613 30.625L24.6904 24.3542" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <button className='hidden md:flex items-center justify-center px-6 py-2 border border-primary text-white dark:border-gray-50/60 rounded-full text-md font-normal dark:text-white/90 bg-primary dark:bg-transparent dark:hover:bg-primary dark:hover:border-primary transition-all'>
+            تحميل التطبيـق
+          </button>
+          <div className={`hamburger md:hidden ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)} >
+            <div></div>
           </div>
         </div>
       </div>
-      {/* Mobile menu */}
-      <div
-        className={cn(
-          "bg-background md:hidden transition-max-height duration-500 ease-in-out overflow-hidden rounded-b-lg",
-          {
-            "max-h-screen": isOpen,
-            "max-h-0": !isOpen,
-          }
-        )}
-      >
-        <div className="px-7 flex flex-col">
-          <Search />
-          <Navlinks />
-        </div>
-      </div>
-      {/* Overlay */}
-      {isOpen && (
+
+      {/* Mobile Menu */}
+      {/* TODO: Improve Sliding in Animation for Mobile Menu & Add Social Icons */}
+      {menuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 -z-10"
-          onClick={closeMenu}
-        />
+          className={`fixed container top-16 right-0 w-full bg-white dark:bg-background/95 dark:backdrop-blur-sm transition-all duration-1000 transform h-screen ${menuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+            } md:hidden`}
+        >
+          <ul className="space-y-4 text-center pt-4">
+            {['الرئيسية', 'الحلقات', 'المدونة', 'اتصل بنا'].map((item, index) => (
+              <li key={index}>
+                <Link href="/">
+                  <span className="text-lg block py-2">{item}</span>
+                </Link>
+
+              </li>
+            ))}
+            <li>
+              <button className='items-center justify-center px-6 py-2 border border-primary text-white dark:border-gray-50/60 rounded-full text-md font-normal dark:text-white/90 bg-primary dark:bg-transparent dark:hover:bg-primary dark:hover:border-primary transition-all'>
+                تحميل التطبيـق
+              </button>
+            </li>
+          </ul>
+        </div>
       )}
     </nav>
   );
-};
-
-export default Navbar;
+}

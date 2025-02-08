@@ -6,7 +6,7 @@ import { FC } from "react";
 const Hero: FC = () => {
   return (
     <section className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-bl from-secondary via-background to-primary/10" />
+      {/* <div className="absolute inset-0 bg-gradient-to-bl from-secondary via-background to-primary/10" /> */}
       <div className="container relative mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
           <div className="max-w-2xl">

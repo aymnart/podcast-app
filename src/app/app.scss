@@ -1,0 +1,35 @@
+/**
+ * SETTINGS
+ * Tailwind.............Import tailwind.
+ * Fonts................Any font files.
+ * Typography...........typography Settings.
+ * Global...............Project-specific, globally available variables.
+ *
+ * COMPONENTS
+ * Header...............Specific styles for header styles.
+ * Footer...............Specific styles for footer styles.
+ *
+ * UTILITIES
+ * Dark Light Switcher............Specific styles for dark light mode switcher.
+ * Mobile Menu............Specific styles for mobile menu.
+ *
+*/
+
+@import '../assets/styles/01-settings/tailwind.scss';
+@import '../assets/styles/01-settings/fonts.scss';
+@import '../assets/styles/01-settings/typography.scss';
+@import '../assets/styles/01-settings/global.scss';
+
+
+@import '../assets/styles/02-components/header.scss';
+@import '../assets/styles/02-components/footer.scss';
+
+@import '../assets/styles/03-utilities/dark-light-switcher.scss';
+@import '../assets/styles/03-utilities/mobile-menu.scss';
+
+
+
+
+
+
+
