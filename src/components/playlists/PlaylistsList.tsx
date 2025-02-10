@@ -9,7 +9,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { playlist } from '@/types/Playlist'
 import { Navigation } from 'swiper/modules'
 
 
@@ -21,7 +20,7 @@ interface PlaylistsListProps {
 
 const PlaylistsList: React.FC<PlaylistsListProps> = ({ type }) => {
 
-    const playlists: playlist[] = [
+    const playlists: Playlist[] = [
         {
             id: 1,
             title: 'رياض الصالحين',

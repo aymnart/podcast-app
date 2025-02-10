@@ -1,8 +1,6 @@
 import React from 'react'
 import SingleProgram from './SingleProgram'
 import ProgramThumbnail1 from '@/assets/images/programs/thumbnail-1.png'
-import ProgramThumbnail2 from '@/assets/images/programs/thumbnail-2.png'
-import ProgramThumbnail3 from '@/assets/images/programs/thumbnail-3.png'
 
 const ProgramsList = () => {
 

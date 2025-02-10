@@ -1,8 +1,8 @@
-import { playlist } from '@/types/Playlist'
-import Image, { StaticImageData } from 'next/image'
+import { Playlist } from '@/types/Playlist'
+import Image from 'next/image'
 import React from 'react'
 
-const SinglePlaylist: React.FC<playlist> = (playlist) => {
+const SinglePlaylist: React.FC<Playlist> = (playlist) => {
     return (
         <div className='flex flex-col gap-2'>
             <Image src={playlist.thumbnail} alt='' className='aspect-video rounded-md w-full h-auto' />

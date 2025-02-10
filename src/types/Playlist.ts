@@ -1,8 +1,8 @@
 import { StaticImageData } from "next/image"
 
-export interface playlist {
+export interface Playlist {
     id: number | string
     title: string
-    length: string
     thumbnail: StaticImageData
+    length: string
 }
