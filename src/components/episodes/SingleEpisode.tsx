@@ -2,19 +2,15 @@ import React from 'react'
 import Image, { StaticImageData } from "next/image";
 import { Button } from '../ui/button';
 import { Play } from '@phosphor-icons/react';
+import { episode } from '@/types/Episode';
 
-interface episode {
-    id: number | string,
-    title: string,
-    description: string,
-    thumbnail: StaticImageData
-}
+
 
 const SingleEpisode: React.FC<episode> = (episode) => {
     return (
-        <div className='flex gap-4 items-center'>
-            <div className='relative h-[60px] md:h-20 rounded-md aspect-video w-1/3 flex items-center'>
-                <Image src={episode.thumbnail} alt={episode.title} className='aspect-video rounded-md' />
+        <div className='flex gap-4 items-center  h-20 md:h-20'>
+            <div className='relative h-20 md:h-20 rounded-md aspect-video w-1/3 flex items-center'>
+                <Image src={episode.thumbnail} alt={episode.title} className='aspect-video rounded-md h-fit object-cover ' />
                 <Button
                     size="sm"
                     variant="play"

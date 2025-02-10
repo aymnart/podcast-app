@@ -48,8 +48,8 @@ const EpisodesList = () => {
     ]
     return (
         <section className="container mx-auto pb-4 pt-6 md:py-8 px-4 md:px-8 lg:px-16">
-            <SectionHeading title='احدث الحلقات' display_all_url='#' />
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:space-y-1'>
+            <SectionHeading title='احدث الحلقات' link='#' />
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 md:gap-4 md:space-y-1'>
                 {episodes.map((episode) => (
                     <SingleEpisode key={episode.id} {...episode} />
                 ))}
