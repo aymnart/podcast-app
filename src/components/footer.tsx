@@ -50,12 +50,12 @@ const footerData: FooterSection[] = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-background max-w-screen-lg mx-auto pb-2">
+    <footer className="bg-background container mx-auto pb-4 pt-6 md:py-8 px-4 md:px-8 lg:px-16">
       {/* <Hr style="gradient" className="mb-12">
         <div className="absolute left-1/2 transform -translate-x-1/2 w-[calc(2.6rem+0.6vw)] h-7 bg-foreground border-[10px] border-background rounded-full" />
       </Hr> */}
       <div className="mx-auto w-full">
-        <div className="grid mx-auto w-full text-center grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+        <div className="grid mx-auto w-full text-start grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
           {footerData.map((item) => (
             <div key={item.title}>
               <h2 className="mb-6 font-bold text-md text-foreground uppercase">

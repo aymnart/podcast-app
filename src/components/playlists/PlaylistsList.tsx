@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import SectionHeading from '../SectionHeading'
+import SectionHeading from '@/components/SectionHeading'
 import SinglePlaylist from './SinglePlaylist'
 import PlaylistThumbnail1 from '@/assets/images/playlists/thumbnail-1.png'
 import PlaylistThumbnail2 from '@/assets/images/playlists/thumbnail-2.png'

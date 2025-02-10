@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import "./app.scss";
 import { Cairo } from "next/font/google";
-import Navbar from "../components/Navbar";
-import Footer from "../components/footer";
-import Breadcrumb from "../components/breadcrumb";
-import { KBar } from "@/components/kbar";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/footer";
 import ThemeProviderWrapper from "@/components/ThemeProviderWrapper";
 
 const cairo = Cairo({

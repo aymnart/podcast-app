@@ -5,9 +5,9 @@ interface sectionHeading {
     link: string,
     type: string,
     navigation: {
-        nextRef: Ref<null>,
-        prevRef: Ref<null>
-    }
+        nextRef: Ref<null> | null,
+        prevRef: Ref<null> | null
+    } | null
 }
 
 const SectionHeading: React.FC<sectionHeading> = (sectionHeading) => {

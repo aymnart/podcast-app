@@ -16,18 +16,18 @@
  *
 */
 
-@import '../assets/styles/01-settings/tailwind.scss';
-@import '../assets/styles/01-settings/fonts.scss';
-@import '../assets/styles/01-settings/typography.scss';
-@import '../assets/styles/01-settings/global.scss';
+@import '@/assets/styles/01-settings/tailwind.scss';
+@import '@/assets/styles/01-settings/fonts.scss';
+@import '@/assets/styles/01-settings/typography.scss';
+@import '@/assets/styles/01-settings/global.scss';
 
 
-@import '../assets/styles/02-components/header.scss';
-@import '../assets/styles/02-components/footer.scss';
+@import '@/assets/styles/02-components/header.scss';
+@import '@/assets/styles/02-components/footer.scss';
 
-@import '../assets/styles/03-utilities/dark-light-switcher.scss';
-@import '../assets/styles/03-utilities/mobile-menu.scss';
-@import '../assets/styles/03-utilities/swiper.scss';
+@import '@/assets/styles/03-utilities/dark-light-switcher.scss';
+@import '@/assets/styles/03-utilities/mobile-menu.scss';
+@import '@/assets/styles/03-utilities/swiper.scss';
 
 
 

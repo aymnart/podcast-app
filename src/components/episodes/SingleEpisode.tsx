@@ -1,6 +1,6 @@
 import React from 'react'
 import Image, { StaticImageData } from "next/image";
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
 import { Play } from '@phosphor-icons/react';
 import { episode } from '@/types/Episode';
 

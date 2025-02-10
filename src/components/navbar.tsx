@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import ModeSwitcher from './ui/ModeSwitcher';
-import appLogo from '../assets/images/kalimah-logo.png';
-import appLogoDark from '../assets/images/kalimah-logo-dark.png';
+import appLogo from '@/assets/images/kalimah-logo.png';
+import appLogoDark from '@/assets/images/kalimah-logo-dark.png';
 import Image from 'next/image';
 import { Button } from './ui/button';
 
