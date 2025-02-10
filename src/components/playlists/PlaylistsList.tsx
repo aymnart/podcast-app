@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules'
+import { Playlist } from '@/types/Playlist'
 
 
 
@@ -63,7 +64,6 @@ const PlaylistsList: React.FC<PlaylistsListProps> = ({ type }) => {
             thumbnail: PlaylistThumbnail2,
             length: '32 حلقة'
         },
-        ,
         {
             id: 8,
             title: 'رياض الصالحين',
@@ -78,7 +78,7 @@ const PlaylistsList: React.FC<PlaylistsListProps> = ({ type }) => {
     return (
         <section className='pb-4 pt-6 md:py-8'>
             <div className="container mx-auto px-4 md:px-8 lg:px-16 flex gap-1 justify-between items-center">
-                <SectionHeading title='البودكاستات' link='#' type='slider' navigation={{prevRef, nextRef}} />  
+                <SectionHeading title='البودكاستات' link='#' type='slider' navigation={{ prevRef, nextRef }} />
             </div>
 
             {
@@ -111,8 +111,10 @@ const PlaylistsList: React.FC<PlaylistsListProps> = ({ type }) => {
                             }}
                             onSlideChange={() => console.log('slide change')}
                             onSwiper={(swiper) => setTimeout(() => {
-                                swiper.params.navigation.prevEl = prevRef.current;
-                                swiper.params.navigation.nextEl = nextRef.current;
+                                if (swiper?.params?.navigation && typeof swiper.params.navigation === 'object') {
+                                    swiper.params.navigation.prevEl = prevRef.current;
+                                    swiper.params.navigation.nextEl = nextRef.current;
+                                }
                                 swiper.navigation.destroy()
                                 swiper.navigation.init();
                                 swiper.navigation.update();

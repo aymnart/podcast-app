@@ -2,11 +2,11 @@ import React from 'react'
 import Image from "next/image";
 import { Button } from '@/components/ui/button';
 import { Play } from '@phosphor-icons/react';
-import { episode } from '@/types/Episode';
+import { Episode } from '@/types/Episode';
 
 
 
-const SingleEpisode: React.FC<episode> = (episode) => {
+const SingleEpisode: React.FC<Episode> = (episode) => {
     return (
         <div className='flex gap-4 items-center  h-20 md:h-20'>
             <div className='relative h-20 md:h-20 rounded-md aspect-video w-1/3 flex items-center'>
