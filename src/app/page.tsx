@@ -3,6 +3,7 @@
 import EpisodesList from "@/components/episodes/EpisodesList";
 import Hero from "../components/hero-section";
 import PlaylistsList from "@/components/playlists/PlaylistsList";
+import ProgramsList from "@/components/programs/ProgramsList";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <EpisodesList />
       <PlaylistsList/>
+      <ProgramsList/>
     </div>
   );
 }

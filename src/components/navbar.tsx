@@ -49,8 +49,8 @@ export default function Navbar() {
         <div className="flex items-center gap-4 rtl:space-x-reverse">
           <ModeSwitcher />
           <svg xmlns="http://www.w3.org/2000/svg" className='duration-150 text-gray-600 dark:text-gray-100' width="26" height="26" viewBox="0 0 36 35" fill="none">
-            <path className='duration-0' d="M16.3778 27.7083C22.8212 27.7083 28.0445 22.485 28.0445 16.0417C28.0445 9.59834 22.8212 4.375 16.3778 4.375C9.93453 4.375 4.71118 9.59834 4.71118 16.0417C4.71118 22.485 9.93453 27.7083 16.3778 27.7083Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            <path className='duration-0' d="M30.9613 30.625L24.6904 24.3542" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path className='duration-0' d="M16.3778 27.7083C22.8212 27.7083 28.0445 22.485 28.0445 16.0417C28.0445 9.59834 22.8212 4.375 16.3778 4.375C9.93453 4.375 4.71118 9.59834 4.71118 16.0417C4.71118 22.485 9.93453 27.7083 16.3778 27.7083Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path className='duration-0' d="M30.9613 30.625L24.6904 24.3542" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           {/* <button className='hidden md:flex items-center justify-center px-6 py-2 border border-primary text-white dark:border-gray-50/60 rounded-full text-md font-normal dark:text-white/90 bg-primary dark:bg-transparent dark:hover:bg-primary dark:hover:border-primary transition-all'>
             تحميل التطبيـق
